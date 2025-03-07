@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakup Calculator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #a8d0e6, #f1f1f1);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        input[type="date"], input[type="text"], textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            outline: none;
+            margin-bottom: 20px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+            width: 80%;
+            display: block;
+            margin: 10px auto;
+        }
+        input:focus, textarea:focus {
+            border-color: #1c77c3;
+            box-shadow: 0 0 5px rgba(28, 119, 195, 0.5);
+        }
+        button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #4a90e2, #1c77c3);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(28, 119, 195, 0.3);
+        }
+        button:hover {
+            background: linear-gradient(135deg, #1c77c3, #4a90e2);
+            transform: translateY(-2px);
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        textarea {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Breakup Calculator</h1>
+        <p>Track your progress and start fresh!</p>
+
+        <!-- Couple Name -->
+        <div class="section">
+            <h2>Couple Name</h2>
+            <input type="text" id="coupleName" placeholder="Enter your couple name (e.g. X & Y)" />
+        </div>
+
+        <!-- Anniversary Notifications -->
+        <div class="section">
+            <h2>Anniversary Notifications</h2>
+            <input type="date" id="breakupDate" />
+            <button onclick="calculateAnniversary()">Check Anniversary</button>
+            <div class="result" id="anniversaryResult"></div>
+        </div>
+
+        <!-- Motivational Quotes -->
+        <div class="section">
+            <h2>Motivational Quote</h2>
+            <div class="result" id="motivationalQuote"></div>
+        </div>
+
+        <!-- Mood Tracker -->
+        <div class="section">
+            <h2>Mood Tracker</h2>
+            <textarea id="moodEntry" placeholder="How are you feeling today?"></textarea>
+            <button onclick="saveMood()">Save Mood</button>
+            <div class="result" id="moodResult"></div>
+        </div>
+
+        <!-- Memory Box -->
+        <div class="section">
+            <h2>Memory Box</h2>
+            <textarea id="memoryEntry" placeholder="Write down a memory you'd like to keep or let go."></textarea>
+            <button onclick="saveMemory()">Save Memory</button>
+            <div class="result" id="memoryBox"></div>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div class="section">
+            <h2>Progress Tracker</h2>
+            <button onclick="viewProgress()">View Progress</button>
+            <div class="result" id="progressResult"></div>
+        </div>
+    </div>
+
+    <script src="breakup.js"></script>
+</body>
+</html>
